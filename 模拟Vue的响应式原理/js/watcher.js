@@ -23,6 +23,8 @@ class Watcher {
     let newValue = this.vm[this.key]
     // 比较旧值和新值
     if (newValue === this.oldValue) return
+    // 更新旧值
+    this.oldValue = newValue;
     // 调用具体的更新方法
     this.cb(newValue)
   }
